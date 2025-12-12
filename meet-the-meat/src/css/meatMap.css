@@ -1,0 +1,36 @@
+ svg {
+     width: 100%;
+     height: auto;
+     display: block;
+ }
+
+ #layer1 path {
+     z-index: -1;
+     transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+     cursor: pointer;
+     transform-box: fill-box;
+     transform-origin: center center;
+ }
+
+ #layer1 path:hover {
+     fill: #c29c04 !important;
+     transform: scale(1.1);
+     filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.5));
+     position: relative;
+     z-index: 999;
+ }
+
+ text {
+     pointer-events: none;
+ }
+
+ .map-wrapper {
+     width: 90%;
+     max-width: 900px;
+     background-color: rgba(255, 255, 255, 0.849);
+     padding: 20px;
+     border-radius: 15px;
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+     color: rgb(41, 34, 34);
+     font-size: 18px;
+ }
