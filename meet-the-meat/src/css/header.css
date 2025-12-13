@@ -1,0 +1,55 @@
+.header-wrapper {
+    background-color: white;
+    width: 100%;
+    padding: 1em;
+    box-shadow: 0px 0px 4px 0px grey;
+    z-index: 999;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-content {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content .about {
+    color: grey;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.header-content .about-label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.header-content .about .info-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.header-flags-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .header-content .about .info-icon {
+        width: 15px;
+        height: 15px;
+    }
+
+    .header-content .about {
+        color: grey;
+        font-size: 1rem;
+    }
+
+}

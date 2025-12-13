@@ -1,13 +1,28 @@
 import HeaderFlags from "../assets/flags"
-function header() {
-    return(
-        <>
-        <div className="header-wrapper" style={{backgroundColor:'white',width:'100%', height:'30px', boxShadow:'0px 0px 4px 0px grey', padding:'1em', zIndex:'999', position:'relative'}}>
-            <div className="header-content" style={{width:"90%" , display:'flex', justifyContent:'flex-end', alignItens:'center'}} >
-                <HeaderFlags/>
+import { BsInfoCircleFill } from "react-icons/bs";
+// Certifique-se de importar seu arquivo CSS
+import '../css/header.css'; 
+
+function Header() {
+    return (
+        <div className="header-wrapper">
+            <div className="header-content">
+
+                <div className="about">
+                    <div className="about-label">
+                        <BsInfoCircleFill className="info-icon" />
+                        <span>About</span>
+                    </div>
+                </div>
+
+                {/* Corrigi o className de 'header-' para 'header-flags-container' para clareza */}
+                <div className="header-flags-container">
+                    <HeaderFlags />
+                </div>
             </div>
         </div>
-        </>
-    ) 
+    );
 }
-export default header
+
+// Renomeei a função para começar com letra maiúscula (convenção React)
+export default Header;
