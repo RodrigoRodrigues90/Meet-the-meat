@@ -1,19 +1,24 @@
+import { useState } from "react";
 import '../css/home.css'
 import MeatMap from '../components/meatMap'
 import SteakSvg from '../assets/Steak_svg'
+import MainInfo from '../components/mainInfo'
 import { CutsMap } from '../components/cutsMap'
+
 function homePage() {
-   // 1. Prepara e ordena todos os dados
+    const [selectedCutNumber, setSelectedCutNumber] = useState(1);
+
+    const handleCutSelect = (cutIdString) => {
+        const cutIdNumber = parseInt(cutIdString, 10);
+        setSelectedCutNumber(cutIdNumber);
+    };
     const cutsArray = Object.values(CutsMap)
         .sort((a, b) => a.number - b.number);
-    
-    // 2. Define o ponto de corte para as colunas
-    // Você pediu 10 cortes na esquerda. O índice 10 separa o 10º (índice 9) do 11º (índice 10).
-    const splitIndex = 11; 
+
+    const splitIndex = 11;
 
     const columnLeft = cutsArray.slice(0, splitIndex); // Cortes 1 a 10
     const columnRight = cutsArray.slice(splitIndex); // Cortes 11 em diante
-
     // Função para renderizar a lista de cortes
     const renderCutsList = (cuts) => (
         <ul className="cuts-list">
@@ -35,7 +40,7 @@ function homePage() {
                 </div>
                 <div className="map-wrapper">
                     <p>Escolha a peça para destacar.</p>
-                    <MeatMap />
+                    <MeatMap onPathClick={handleCutSelect} />
                     <div className="table-cortes-wrapper">
                         <div className="cuts-columns-container">
                             <div className="column-left">
@@ -47,7 +52,13 @@ function homePage() {
                         </div>
                     </div>
                 </div>
+                <div id="info-cuts-wrapper">
+                    {selectedCutNumber !== 0 && (
+                        <MainInfo number={selectedCutNumber} />
+                    )}
+                </div>
             </div>
+
         </>
     )
 }
