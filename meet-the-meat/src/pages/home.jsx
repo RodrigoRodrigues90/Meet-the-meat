@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import ScrollReveal from 'scrollreveal';
 import '../css/home.css'
 import MeatMap from '../components/meatMap'
 import SteakSvg from '../assets/Steak_svg'
@@ -7,7 +8,7 @@ import PontosDaCarne from '../components/pontosDaCarne'
 import { CutsMap } from '../components/cutsMap'
 
 function homePage() {
-    const [selectedCutNumber, setSelectedCutNumber] = useState(1);
+    const [selectedCutNumber, setSelectedCutNumber] = useState(0);
 
     const handleCutSelect = (cutIdString) => {
         const cutIdNumber = parseInt(cutIdString, 10);
@@ -31,6 +32,22 @@ function homePage() {
             ))}
         </ul>
     );
+
+    useEffect(() => {
+    const sr = ScrollReveal({
+      origin: 'bottom',
+      distance: '30px',
+      duration: 2000,
+      delay: 200,
+      reset: false
+    });
+
+    // Aplica aos elementos via classe CSS
+    sr.reveal('.title-wrapper h1', {origin: 'top'});
+    sr.reveal('.subtitle-wrapper h2', {delay: 300});
+    sr.reveal('.info-content p', {delay: 300});
+    sr.reveal('.map-wrapper', {delay: 500});
+  }, []);
     return (
         <>
             <div className="main-home">

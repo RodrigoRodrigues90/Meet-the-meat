@@ -167,6 +167,7 @@ export const CutsMap = {
         melhorUso: 'Churrasco / Forno',
         number: 13,
         Image: costela,
+        video: 'https://www.youtube.com/embed/EHIy8IOZSpw?si=MjJoJW1Q_jbLVRYd'
     },
     // 14. Picanha
     14: {
@@ -232,7 +233,7 @@ export const CutsMap = {
         melhorUso: 'Panela / Roast Beef',
         number: 19,
         Image: coxaoduro,
-        vide: 'https://www.youtube.com/embed/uM5bqHgDknw?si=_6RSwU9Em1c3x_GI ',
+        vide: 'https://www.youtube.com/embed/uM5bqHgDknw?si=9Lz21S36ew5cgGyG',
     },
     // 20. Lagarto
     20: {

@@ -17,10 +17,17 @@
 .header-pontos p {
     color: #aaa;
     margin-bottom: 40px;
+    font-size: large;
 }
-.imagem-pontos{
+
+.imagem-pontos {
     width: 100%;
-    >img{
+
+    >img {
         width: 100%;
     }
+}
+
+@media(max-width:480px) {
+  
 }

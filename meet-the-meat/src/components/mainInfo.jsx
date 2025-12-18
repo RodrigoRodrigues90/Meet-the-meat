@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import ScrollReveal from 'scrollreveal';
 import '../css/mainInfo.css'
 import { CutsMap } from '../components/cutsMap.js'
 
@@ -7,6 +9,21 @@ function mainInfo({ number }) {
     let preparo = CutsMap[number].tempoPreparo;
     let gordura = CutsMap[number].gordura;
     let melhorUso = CutsMap[number].melhorUso;
+
+    useEffect(() => {
+        // Configuração do ScrollReveal
+        const sr = ScrollReveal({
+            origin: 'left',
+            distance: '20px',
+            duration: 2000,
+            delay: 200,
+            reset: true // Define se a animação repete ao subir o scroll
+        });
+
+        // Aplica aos elementos via classe CSS
+        sr.reveal('.description-main-info', { origin: 'right' });
+        sr.reveal('.content-main-info img');
+    }, []);
     return (
         <>
             <section className='wrapper-main-info'>
@@ -42,7 +59,6 @@ function mainInfo({ number }) {
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen>
                     </iframe>
-
                 </div>
             </section>
         </>
