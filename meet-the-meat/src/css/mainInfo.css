@@ -1,6 +1,4 @@
 .wrapper-main-info {
-    width: 90%;
-    max-width: 1200px;
     background-color: rgba(255, 255, 255, 0.849);
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -14,7 +12,6 @@
     height: fit-content;
     justify-content: center;
     padding-bottom: 1em;
-    gap: 20px;
     padding: 1em;
 }
 
@@ -34,18 +31,53 @@
     max-width: 500px;
 }
 
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.stat-item .icon {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.stat-item .label {
+    font-size: 0.7rem;
+    color: #888;
+    text-transform: uppercase;
+}
+
+.stat-item .value {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--dark);
+}
+
 .wrapper-cortes-especiais {
     background-image: url('../assets/cozinha.webp');
     background-size: cover;
-    background-color: rgb(243, 243, 243);
+    background-color: rgba(8, 8, 8, 0.829);
     background-blend-mode: overlay;
-    padding: 2em 0;
-    border-radius: 20px;
+    padding: 1em 0;
+    color: whitesmoke;
+    
 }
 
 .wrapper-cortes-especiais iframe {
     width: 90%;
-    height: 510px;
+    height: 300px;
 
 }
 
@@ -53,8 +85,12 @@
     .description-main-info {
         font-size: 14px;
     }
+
     .wrapper-cortes-especiais iframe {
         width: 100%;
+    }
+    .wrapper-cortes-especiais h1{
+        font-size: 38px;
     }
 }
 

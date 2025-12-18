@@ -3,6 +3,7 @@ import '../css/home.css'
 import MeatMap from '../components/meatMap'
 import SteakSvg from '../assets/Steak_svg'
 import MainInfo from '../components/mainInfo'
+import PontosDaCarne from '../components/pontosDaCarne'
 import { CutsMap } from '../components/cutsMap'
 
 function homePage() {
@@ -57,6 +58,7 @@ function homePage() {
                         <MainInfo number={selectedCutNumber} />
                     )}
                 </div>
+                <PontosDaCarne />
             </div>
 
         </>
