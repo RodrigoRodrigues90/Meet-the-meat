@@ -22,15 +22,24 @@
     margin-bottom: 40px;
     font-size: large;
 }
-
-.imagem-pontos {
-    padding-top: 2em;
-    width: 100%;
+.sticky-container{    
+    height: 400px; /* Mantém o conteúdo fixo enquanto você rola os 300vh */
     background-image: url('https://media.istockphoto.com/id/1323401361/pt/foto/barbecue-grill-with-fire-flames-empty-fire-grid-on-black-background.jpg?s=612x612&w=0&k=20&c=lBIvuXfmgKzgt_6eB-6Yus-jtyBCj9TSc-fh3N6AqKo=');
     background-size:cover;
-    background-position:bottom;
-    height: 400px;
+    background-position:center -20px;
+    overflow-y: auto;
     position: relative;
+}
+.imagem-pontos{
+   position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 400px;
+    pointer-events: none
+}
+.scroll-div{
+    height: 300vh;
 }
 
 .ponto {
@@ -43,25 +52,23 @@
     box-shadow: 1px 5px 10px 2px rgba(0, 0, 0, 0.411);
     border-radius: 50px;
     border: 3px solid rgb(83, 26, 26);
+    transition: opacity .5s ease;  
 }
 
 .ponto.mal-passada {
     background-image: url('../assets/ponto_cru.webp');
     background-size: 120%;
     background-position: center center;
-    z-index: 3;
 }
 
 .ponto.ao-ponto {
     background-image: url('../assets/ponto_ao_ponto.webp');
     background-size: 110%;
-    z-index: 2;
 }
 
 .ponto.bem-passada{
-    background-image: url('../assets/pescoco.jpg');
+    background-image: url('../assets/ponto_ao_ponto.webp');
     background-size: 110%;
-    z-index: 1;
 }
 .info-pontos{
     width: 250px;
