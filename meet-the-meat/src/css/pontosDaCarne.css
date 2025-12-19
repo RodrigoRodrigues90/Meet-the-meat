@@ -4,6 +4,9 @@
     padding: 60px 20px;
     font-family: sans-serif;
     text-align: center;
+    border-radius: 0px;
+    width: 100%;
+    max-width: 900px;
 }
 
 .header-pontos h2 {
@@ -21,13 +24,77 @@
 }
 
 .imagem-pontos {
+    padding-top: 2em;
     width: 100%;
+    background-image: url('https://media.istockphoto.com/id/1323401361/pt/foto/barbecue-grill-with-fire-flames-empty-fire-grid-on-black-background.jpg?s=612x612&w=0&k=20&c=lBIvuXfmgKzgt_6eB-6Yus-jtyBCj9TSc-fh3N6AqKo=');
+    background-size:cover;
+    background-position:bottom;
+    height: 400px;
+    position: relative;
+}
 
-    >img {
-        width: 100%;
+.ponto {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 110px;
+    box-shadow: 1px 5px 10px 2px rgba(0, 0, 0, 0.411);
+    border-radius: 50px;
+    border: 3px solid rgb(83, 26, 26);
+}
+
+.ponto.mal-passada {
+    background-image: url('../assets/ponto_cru.webp');
+    background-size: 120%;
+    background-position: center center;
+    z-index: 3;
+}
+
+.ponto.ao-ponto {
+    background-image: url('../assets/ponto_ao_ponto.webp');
+    background-size: 110%;
+    z-index: 2;
+}
+
+.ponto.bem-passada{
+    background-image: url('../assets/pescoco.jpg');
+    background-size: 110%;
+    z-index: 1;
+}
+.info-pontos{
+    width: 250px;
+    height: fit-content;
+
+    background-color: #381818fb;
+    >p{
+        margin: 0;
+        font-size: 24px;
+        font-weight: bolder;
     }
+}
+.scroll-down{
+    animation: scroll-anim 1s infinite alternate;
+    cursor: pointer;
+}
+@keyframes scroll-anim {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(20px); }
 }
 
 @media(max-width:480px) {
-  
+    .secao-pontos{
+        padding: 60px 0;
+    }
+    .header-pontos{
+        padding: 0 20px;
+    }
+    .info-pontos{
+        width: 160px;
+        >p{
+            font-size: 18px;
+        }
+    }
+
 }

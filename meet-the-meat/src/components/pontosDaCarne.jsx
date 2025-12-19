@@ -8,9 +8,19 @@ function pontosDaCarne() {
                     <p>O segredo não está no tempo, mas na temperatura interna. Use este guia para nunca mais errar.</p>
                 </div>
 
-               <div className='imagem-pontos'>
-                    <img src="https://carneanguscertificada.com.br/extranet/upload/6d3078992dce8a79ba6dbb58ce937ccd.png"  alt="imagem de pontos da carne" />
-               </div>
+                <div className='imagem-pontos'>
+                    <div className="scroll-down" style={{fontSize:'18px', margin:'0'}}>scroll-down <br/><span>&#8964;</span></div>
+                    <div className="info-pontos">
+                        <p className='ponto-description'>Mal passada</p>
+                        <p className='ponto-tempterature'><span>🌡️</span>52-55°C</p>
+                    </div>
+                    <div className="ponto mal-passada">
+                    </div>
+                    <div className="ponto ao-ponto">
+                    </div>
+                    <div className='ponto bem-passada'>
+                    </div>
+                </div>
             </section>
         </>
     )
