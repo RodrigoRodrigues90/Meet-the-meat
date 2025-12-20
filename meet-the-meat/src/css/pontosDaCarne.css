@@ -52,7 +52,7 @@
     box-shadow: 1px 5px 10px 2px rgba(0, 0, 0, 0.411);
     border-radius: 50px;
     border: 3px solid rgb(83, 26, 26);
-    transition: opacity .5s ease;  
+    transition: opacity .3s ease;  
 }
 
 .ponto.mal-passada {
@@ -60,16 +60,20 @@
     background-size: 120%;
     background-position: center center;
 }
-
 .ponto.ao-ponto {
     background-image: url('../assets/ponto_ao_ponto.webp');
     background-size: 110%;
 }
+.ponto.para-passada {
+    background-image: url('../assets/ponto_ponto_bem.webp');
+    background-size: 110%;
 
+}
 .ponto.bem-passada{
-    background-image: url('../assets/ponto_ao_ponto.webp');
+    background-image: url('../assets/ponto_passada.webp');
     background-size: 110%;
 }
+
 .info-pontos{
     width: 250px;
     height: fit-content;

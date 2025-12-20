@@ -19,9 +19,10 @@ function PontosDaCarne() {
     // Ao-ponto: aparece no meio (0.3 a 0.7)
     // Bem-passada: aparece no fim (0.7 a 1)
     const getOpacity = (ponto) => {
-        if (ponto === 'mal') return scrollRatio < 0.33 ? 1 : 0;
-        if (ponto === 'ao') return scrollRatio >= 0.33 && scrollRatio < 0.66 ? 1 : 0;
-        if (ponto === 'bem') return scrollRatio >= 0.66 ? 1 : 0;
+        if (ponto === 'mal') return scrollRatio < 0.33 ? 1 : 0.2;
+        if (ponto === 'ao') return scrollRatio >= 0.33 && scrollRatio < 0.66 ? 1 : 0.2;
+        if (ponto === 'para-bem') return scrollRatio >= 0.66 && scrollRatio < 1 ? 1 : 0.2;
+        if (ponto === 'bem') return scrollRatio >= 1 ? 1 : 0.2;
         return 0;
     };
 
@@ -29,6 +30,7 @@ function PontosDaCarne() {
     const getText = () => {
         if (scrollRatio < 0.33) return { desc: "Mal passada", temp: "52-55°C" };
         if (scrollRatio < 0.66) return { desc: "Ao ponto", temp: "60-65°C" };
+        if (scrollRatio < 1) return { desc: "Ao ponto/ passada", temp: "66-70°C" };
         return { desc: "Bem passada", temp: "71°C+" };
     };
 
@@ -54,6 +56,7 @@ function PontosDaCarne() {
 
                     <div className="ponto mal-passada" style={{ opacity: getOpacity('mal') }} />
                     <div className="ponto ao-ponto" style={{ opacity: getOpacity('ao') }} />
+                    <div className="ponto para-passada" style={{ opacity: getOpacity('para-bem') }} />
                     <div className='ponto bem-passada' style={{ opacity: getOpacity('bem') }} />
                 </div>
                 
