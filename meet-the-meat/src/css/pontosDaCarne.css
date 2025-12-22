@@ -82,7 +82,7 @@
 
 .ponto.bem-passada {
     background-image: url('../assets/ponto_passada.webp');
-    background-size: 150%;
+    background-size: cover;
     background-position: center center;
 
 }
